@@ -19,12 +19,12 @@ class App extends Component {
   }
 
   search = (query) => {
-    giphy({ apiKey: GIPHY_API_KEY, https: true })
+    giphy({ apiKey: GIPHY_API_KEY })
       .search({
         q: query,
         rating: 'g',
         limit: 10
-      }, (result) => {
+      }, (error, result) => {
         this.setState({
           gifs: result.data
         });
